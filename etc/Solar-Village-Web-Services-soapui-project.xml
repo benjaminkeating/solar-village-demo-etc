@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0e6be49c-4ccb-432c-99a3-7e538028b94a" activeEnvironment="Default" name="Solar Village Web Services" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="30e3da00-4703-406f-a5fa-e31ec5d93466" wsaVersion="NONE" name="ResidentialElectricPermitServiceSoapBinding" type="wsdl" bindingName="{http://electric.permit.gov/}ResidentialElectricPermitServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/permit-web-services-1.0/ElectricPermitService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/permit-web-services-1.0/ElectricPermitService?wsdl"><con:part><con:url>http://localhost:8080/permit-web-services-1.0/ElectricPermitService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ResidentialElectricPermitService" targetNamespace="http://electric.permit.gov/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://electric.permit.gov/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://electric.permit.gov/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getPermitStatus" type="tns:getPermitStatus"/>
+      <xs:element name="getPermitStatusResponse" type="tns:getPermitStatusResponse"/>
+      <xs:element name="submitPermitRequest" type="tns:submitPermitRequest"/>
+      <xs:element name="submitPermitRequestResponse" type="tns:submitPermitRequestResponse"/>
+      <xs:complexType name="getPermitStatus">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPermitStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="submitPermitRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="submitPermitRequestResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getPermitStatus">
+    <wsdl:part element="tns:getPermitStatus" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitPermitRequestResponse">
+    <wsdl:part element="tns:submitPermitRequestResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitPermitRequest">
+    <wsdl:part element="tns:submitPermitRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPermitStatusResponse">
+    <wsdl:part element="tns:getPermitStatusResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ResidentialElectricPermit">
+    <wsdl:operation name="getPermitStatus">
+      <wsdl:input message="tns:getPermitStatus" name="getPermitStatus"></wsdl:input>
+      <wsdl:output message="tns:getPermitStatusResponse" name="getPermitStatusResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submitPermitRequest">
+      <wsdl:input message="tns:submitPermitRequest" name="submitPermitRequest"></wsdl:input>
+      <wsdl:output message="tns:submitPermitRequestResponse" name="submitPermitRequestResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ResidentialElectricPermitServiceSoapBinding" type="tns:ResidentialElectricPermit">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getPermitStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPermitStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPermitStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="submitPermitRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="submitPermitRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitPermitRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResidentialElectricPermitService">
+    <wsdl:port binding="tns:ResidentialElectricPermitServiceSoapBinding" name="ResidentialElectricPermitPort">
+      <soap:address location="http://localhost:8080/permit-web-services-1.0/ElectricPermitService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/permit-web-services-1.0/ElectricPermitService</con:endpoint></con:endpoints><con:operation id="b2584ab7-70f4-4b09-ac25-7365ac3b2f69" isOneWay="false" action="" name="getPermitStatus" bindingOperationName="getPermitStatus" type="Request-Response" outputName="getPermitStatusResponse" inputName="getPermitStatus" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="1b4529e3-3932-4785-b435-c0dbcf03e71a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/permit-web-services-1.0/ElectricPermitService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:elec="http://electric.permit.gov/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <elec:getPermitStatus>
+         <arg0>?</arg0>
+      </elec:getPermitStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://electric.permit.gov/ResidentialElectricPermit/getPermitStatus"/></con:call></con:operation><con:operation id="9022c0e6-7848-4ccc-9d77-c186e208fdec" isOneWay="false" action="" name="submitPermitRequest" bindingOperationName="submitPermitRequest" type="Request-Response" outputName="submitPermitRequestResponse" inputName="submitPermitRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="710e3db1-7950-47f4-9613-8b41c3b74cda" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/permit-web-services-1.0/ElectricPermitService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:elec="http://electric.permit.gov/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <elec:submitPermitRequest>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </elec:submitPermitRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://electric.permit.gov/ResidentialElectricPermit/submitPermitRequest"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="490cf30a-21ce-4205-b154-c5528f82eabe" wsaVersion="NONE" name="ResidentialStructuralPermitServiceSoapBinding" type="wsdl" bindingName="{http://structural.permit.gov/}ResidentialStructuralPermitServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/permit-web-services-1.0/StructuralPermitService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/permit-web-services-1.0/StructuralPermitService?wsdl"><con:part><con:url>http://localhost:8080/permit-web-services-1.0/StructuralPermitService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="ResidentialStructuralPermitService" targetNamespace="http://structural.permit.gov/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://structural.permit.gov/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://structural.permit.gov/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="getPermitStatus" type="tns:getPermitStatus"/>
+      <xs:element name="getPermitStatusResponse" type="tns:getPermitStatusResponse"/>
+      <xs:element name="submitPermitRequest" type="tns:submitPermitRequest"/>
+      <xs:element name="submitPermitRequestResponse" type="tns:submitPermitRequestResponse"/>
+      <xs:complexType name="submitPermitRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="submitPermitRequestResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPermitStatus">
+        <xs:sequence>
+          <xs:element name="arg0" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="getPermitStatusResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getPermitStatus">
+    <wsdl:part element="tns:getPermitStatus" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getPermitStatusResponse">
+    <wsdl:part element="tns:getPermitStatusResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitPermitRequest">
+    <wsdl:part element="tns:submitPermitRequest" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitPermitRequestResponse">
+    <wsdl:part element="tns:submitPermitRequestResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ResidentialStructuralPermit">
+    <wsdl:operation name="submitPermitRequest">
+      <wsdl:input message="tns:submitPermitRequest" name="submitPermitRequest"></wsdl:input>
+      <wsdl:output message="tns:submitPermitRequestResponse" name="submitPermitRequestResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPermitStatus">
+      <wsdl:input message="tns:getPermitStatus" name="getPermitStatus"></wsdl:input>
+      <wsdl:output message="tns:getPermitStatusResponse" name="getPermitStatusResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ResidentialStructuralPermitServiceSoapBinding" type="tns:ResidentialStructuralPermit">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="submitPermitRequest">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="submitPermitRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="submitPermitRequestResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPermitStatus">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getPermitStatus">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getPermitStatusResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ResidentialStructuralPermitService">
+    <wsdl:port binding="tns:ResidentialStructuralPermitServiceSoapBinding" name="ResidentialStructuralPermitPort">
+      <soap:address location="http://localhost:8080/permit-web-services-1.0/StructuralPermitService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/permit-web-services-1.0/StructuralPermitService</con:endpoint></con:endpoints><con:operation id="b2c4f6a4-5815-45f5-8428-7e6bc7c349d1" isOneWay="false" action="" name="getPermitStatus" bindingOperationName="getPermitStatus" type="Request-Response" outputName="getPermitStatusResponse" inputName="getPermitStatus" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3c8fc7d4-25fa-4bf6-abcf-28311b4c439a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/permit-web-services-1.0/StructuralPermitService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:str="http://structural.permit.gov/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <str:getPermitStatus>
+         <arg0>?</arg0>
+      </str:getPermitStatus>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://structural.permit.gov/ResidentialStructuralPermit/getPermitStatus"/></con:call></con:operation><con:operation id="e5f980ef-2d71-44e5-ae26-fde71e029fd9" isOneWay="false" action="" name="submitPermitRequest" bindingOperationName="submitPermitRequest" type="Request-Response" outputName="submitPermitRequestResponse" inputName="submitPermitRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="f544d960-5e4e-43d7-a749-d2f55fe180c1" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/permit-web-services-1.0/StructuralPermitService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:str="http://structural.permit.gov/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <str:submitPermitRequest>
+         <!--Optional:-->
+         <arg0>?</arg0>
+      </str:submitPermitRequest>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://structural.permit.gov/ResidentialStructuralPermit/submitPermitRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
